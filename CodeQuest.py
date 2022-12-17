@@ -10,31 +10,31 @@ from helper import *
 
 
 def MyAnswer(self):
-   Node ptr1 = null, ptr2 = null, dup = null;
-        ptr1 = head;
+    ptr1 = None
+        ptr2 = None
+        dup = None
+        ptr1 = self.head
  
-        /* Pick elements one by one */
-        while (ptr1 != null && ptr1.next != null) {
-            ptr2 = ptr1;
+        # Pick elements one by one
+        while (ptr1 != None and ptr1.next != None):
  
-            /* Compare the picked element with rest
-                of the elements */
-            while (ptr2.next != null) {
+            ptr2 = ptr1
  
-                /* If duplicate then delete it */
-                if (ptr1.data == ptr2.next.data) {
+            # Compare the picked element with rest
+            # of the elements
+            while (ptr2.next != None):
  
-                    /* sequence of steps is important here
-                     */
-                    ptr2.next = ptr2.next.next;
-                    System.gc();
-                }
-                else /* This is tricky */ {
-                    ptr2 = ptr2.next;
-                }
-            }
-            ptr1 = ptr1.next;
-        }
+                # If duplicate then delete it
+                if (ptr1.data == ptr2.next.data):
+ 
+                    # Sequence of steps is important here
+                    dup = ptr2.next
+                    ptr2.next = ptr2.next.next
+                else:
+                    ptr2 = ptr2.next
+ 
+            ptr1 = ptr1.next
+ 
    answer = ""
    print(answer)
 
